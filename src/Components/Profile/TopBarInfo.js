@@ -27,7 +27,10 @@ const TopBarInfo = ({info}) =>{
                     </div>
                 </div>
                 <div className="company-btn-propose">
-                    <Modal btnText="Proposer un Partenariat" id="proposeModal" content={ProposeForm}/>
+                    <button type="button" className="btn" data-toggle="modal" data-target="#proposeModal">
+                        Proposer un Partenariat
+                    </button>
+                    <Modal title="Proposer un Partenariat" id="proposeModal" content={ProposeForm}/>
                 </div>
             </div>
         </div>

@@ -3,8 +3,9 @@ import NeedsList from './NeedsList'
 import Partner from './Partners'
 import Map  from './Here'
 import TopBarInfo from './TopBarInfo'
-import './Profile.css'
 import Description from './Description';
+
+import './Profile.css'
 
 const company = {
         name:"Company name",
@@ -26,13 +27,15 @@ const Profile = ()=>{
                 <TopBarInfo info={company}/>
             </div>
             <div className="profile-body">
-                <main>
-                    <Description description={company.description} companyName={company.name}/>
-                    <NeedsList />
-                </main>
-                <aside>
-                    <Partner />
-                </aside>
+                <div className="row">
+                    <main className="col-md-9">
+                        <Description description={company.description} companyName={company.name}/>
+                        <NeedsList />
+                    </main>
+                    <aside className="col-md-3">
+                        <Partner />
+                    </aside>
+                </div>
             </div> 
         </div>
         

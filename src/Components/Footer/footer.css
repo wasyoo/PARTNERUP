@@ -1,0 +1,26 @@
+
+.partnerup-footer {
+    background: #1E2D3B;
+    padding: 40px;
+}
+.footer-logo{
+    display: flex;
+    align-items: center;
+}
+.footer-logo img{
+    width: 100px;
+    height: 85px;
+    margin-right: 10px;
+}
+
+.footer-logo h1{
+    font-weight: 200;
+    color: #edcd1f;
+    font-size: 50px
+}
+
+.footer-partnerup-desc p{
+    padding: 10px;
+    color : #fff;
+}
+

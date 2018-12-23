@@ -1,0 +1,136 @@
+.home-banner{
+    background: url("/assets/img/home-banner.jpg") no-repeat center -200px;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: grayscale(60%);
+    
+}
+
+.home-banner h1{
+    color:#fff;
+    font-size: 40px;
+    text-shadow: -.5px 0 black, 0 .5px black, .5px 0 black, 0 -.5px black;
+}
+
+.home-search-box{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    margin-top:-20px;
+    z-index: 1000;
+}
+.home-search-box .input-search{
+   border-radius: 0px;
+   width: 50%;
+}
+
+.home-main-container{
+    margin:5% 3%;
+}
+
+.home-need-item-header{
+    display: flex;
+    align-items: center;
+}
+
+.home-need-item-header img{
+    width: 150px;
+}
+
+.statup-item{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    text-align: start;
+}
+
+.statup-item h2{
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.statup-item img{
+    width: 100px;
+    height: 100px;
+}
+
+.best-startup{
+    text-align: center;
+    padding: 10px;
+    border : 1px solid #eee;
+    background: #fff;
+}
+.home-need-item{
+    background: #fff;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.home-need-item-content{
+    padding:10px 20px;
+}
+.home-need-item-tags{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.home-need-item-tags ul{
+    display:flex;
+    list-style: none;
+    margin-top:10px;
+}
+
+.home-need-item-tags li{
+    padding: 3px;
+    border : 1px solid #eee;
+    border-radius: 5px;
+    margin-right: 10px;
+    background: #eee;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.home-need-item-footer{
+    display: flex;
+    justify-content: flex-end
+}
+
+.statup-item span{
+    font-size: 18px;
+}
+
+/* details needs */
+
+.details-needs{
+    padding:20px;
+}
+
+.details-needs-startup{
+    padding: 20px;
+    border:1px solid rgb(136, 136, 136);
+    border-radius: 5px;
+}
+
+.details-needs-startup-top-info{
+    display: flex;
+    align-items: center;
+}
+.details-needs-startup-top-info img{
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    border-radius: 50%;
+}
+
+.home-need-item .modal-dialog{
+    max-width: 80% !important;
+}
+
+/* end details needs */

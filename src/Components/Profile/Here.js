@@ -7,7 +7,7 @@ export default class Map extends Component {
     constructor(props) {
       super(props);
       this.state = {
-        url: `https://image.maps.api.here.com/mia/1.6/mapview?w=${window.innerWidth}&h=${window.innerHeight/3}&z=15&t=5&poitxs=16&poitxc=black&poifc=yellow`,
+        url: `https://image.maps.api.here.com/mia/1.6/mapview?w=${window.innerWidth}&h=${window.innerHeight/3}&z=20&t=5&poitxs=16&poitxc=black&poifc=yellow`,
         points: [],
       }
     }
