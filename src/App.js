@@ -6,23 +6,26 @@ import Messaging from './Components/Messaging/Messaging'
 //import NavBar from './Components/NavBar/NavBar'
 import NavBarConnected from './Components/NavBar/NavBarConnected'
 import Footer from './Components/Footer/Footer'
+import Test from './Components/addUser'
 
 import './App.css';
+
 class App extends Component {
   render() {
     return (
-      <div className="App">
-          <Router>   
-            <div>
-              {/* <NavBar/> */}
-              <NavBarConnected/>
-                <Route exact path="/" component={Home}/>
-                <Route path="/profile" component={Profile} />
-                <Route path="/Messaging" component={Messaging} />
-              <Footer/>
-            </div>
-          </Router>
-      </div>
+        <div className="App">
+            <Router>   
+              <div>
+                {/* <NavBar/> */}
+                <NavBarConnected/>
+                  <Route exact path="/" component={Home}/>
+                  <Route path="/profile" component={Profile} />
+                  <Route path="/Messaging" component={Messaging} />
+                  <Route exact path="/test" component={Test}/>
+                <Footer/>
+              </div>
+            </Router>
+        </div>
     );
   }
 }
