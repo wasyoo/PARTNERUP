@@ -6,6 +6,8 @@ import Messaging from './Components/Messaging/Messaging'
 //import NavBar from './Components/NavBar/NavBar'
 import NavBarConnected from './Components/NavBar/NavBarConnected'
 import Footer from './Components/Footer/Footer'
+import Index from './Components/index/index'
+import Contact from './Components/ContactUs/Contact'
 
 import './App.css';
 class App extends Component {
@@ -15,10 +17,12 @@ class App extends Component {
           <Router>   
             <div>
               {/* <NavBar/> */}
-              <NavBarConnected/>
-                <Route exact path="/" component={Home}/>
+              {/* <NavBarConnected/> */}
+                <Route exact path="/" component={Index}/>
                 <Route path="/profile" component={Profile} />
                 <Route path="/Messaging" component={Messaging} />
+                <Route path="/contact" component={Contact} />
+
               <Footer/>
             </div>
           </Router>
