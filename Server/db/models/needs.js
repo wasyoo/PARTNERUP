@@ -5,7 +5,7 @@ const needsSchema = new mongoose.Schema({
     content : String,
     date    : Date,
     userId  : String,
-    Tags    : Array
+    tags    : Array
 })
 
 module.exports = mongoose.model('Needs', needsSchema)

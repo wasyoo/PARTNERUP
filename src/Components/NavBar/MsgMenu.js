@@ -42,12 +42,12 @@ class MsgMenu extends Component {
     render (){
         return (
             <li className="nav-item dropdown">
-                <a className="nav-link  badge-notification" href="/#" id="dropdown-msg-menu" data-toggle="dropdown" data-badge={message.filter(el => !el.readed).length}><i class="fas fa-envelope"></i></a>
-                <div class="dropdown-menu dropdown-msg-menu dropdown-menu-right" aria-labelledby="dropdown-msg-menu">
-                    <ul class="msg-menu-group">
+                <a className="nav-link  badge-notification" href="/#" id="dropdown-msg-menu" data-toggle="dropdown" data-badge={message.filter(el => !el.readed).length}><i className="fas fa-envelope"></i></a>
+                <div className="dropdown-menu dropdown-msg-menu dropdown-menu-right" aria-labelledby="dropdown-msg-menu">
+                    <ul className="msg-menu-group">
                         <li className="show-all-msg"><a href="/#">Voir tous les messages</a></li>
-                        { this.state.message.map(el =>     
-                            <li class="msg-menu-group-item">
+                        { this.state.message.map((el,i) =>     
+                            <li key={i} className="msg-menu-group-item">
                                 <a href="/#" className="msg-menu-item">
                                     <img src={el.logo} alt ={el.name}/>
                                     <div className="msg-menu-content">

@@ -41,11 +41,11 @@ class NotificationMenu extends Component {
     render (){
         return (
             <li className="nav-item dropdown">
-                <a className="nav-link  badge-notification" href="/#" id="dropdown-msg-menu" data-toggle="dropdown" data-badge={request.filter(el => !el.readed).length}><i class="far fa-handshake"></i></a>
-                <div class="dropdown-menu dropdown-msg-menu dropdown-menu-right" aria-labelledby="dropdown-msg-menu">
-                    <ul class="msg-menu-group">
-                        { this.state.request.map(el =>     
-                            <li class="msg-menu-group-item">
+                <a className="nav-link  badge-notification" href="/#" id="dropdown-msg-menu" data-toggle="dropdown" data-badge={request.filter(el => !el.readed).length}><i className="far fa-handshake"></i></a>
+                <div className="dropdown-menu dropdown-msg-menu dropdown-menu-right" aria-labelledby="dropdown-msg-menu">
+                    <ul className="msg-menu-group">
+                        { this.state.request.map((el,i) =>     
+                            <li key={i}className="msg-menu-group-item">
                                 <a href="/#" className="msg-menu-item">
                                     <img src={el.logo} alt ={el.name}/>
                                     <div className="msg-menu-content">

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Dropdown } from 'semantic-ui-react'
+import Axios from 'axios'
 
 const options = [
     { key: 'angular', text: 'Angular', value: 'angular' },
@@ -21,10 +22,35 @@ const options = [
     { key: 'ui', text: 'UI Design', value: 'ui' },
     { key: 'ux', text: 'User Experience', value: 'ux' },
   ]
+  const addNeeds = (e)=>{
+    e.preventDefault()
+    const tags = []
+    const tagsSelector = e.target.querySelectorAll('#tags a');
+    for (let i=0; i < tagsSelector.length ; i++){
+      tags.push(tagsSelector[i].innerText)
+    }
+
+    const NewNeeds = {
+        title : e.target.title.value,
+        content : e.target.description.value,
+        date:new Date(),
+        tags : tags
+    }
+
+    Axios.post("http://localhost:4000/new_needs", NewNeeds)
+    .then((res)=>{
+        console.log(res.data)
+    })
+    .catch((err)=>{
+        console.log(err)
+    })
+
+  }
 
 const ProposeForm = () =>{
+    
     return (
-        <form>
+        <form onSubmit={addNeeds}>
         <div className="form-group">
           <label htmlFor="title">Title</label>
           <input
@@ -43,7 +69,9 @@ const ProposeForm = () =>{
                 rows="5">
             </textarea>
         </div>
-        <Dropdown placeholder='Skills' fluid multiple selection options={options} />
+
+        <Dropdown name="tags" id="tags" placeholder='Skills' fluid multiple selection options={options} />
+
         <button type="submit" className="btn btn-primary">
           Submit
         </button>

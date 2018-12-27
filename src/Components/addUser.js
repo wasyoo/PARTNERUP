@@ -14,10 +14,10 @@ export class AddUser extends Component {
             password : e.target.password.value,
         }
     
-        Axios.post("http://localhost:4000/new_user", NewUser)
+        Axios.post("http://localhost:4000/user/new", NewUser)
         .then((res)=>{
-            console.log(res.data._id)
-            this.props.history.push(`/${res.data._id}`);
+            localStorage.setItem('UserToken', res.data.token);
+            this.props.history.push('/addcompany')
         })
         .catch((err)=>{
             console.log(err)

@@ -1,17 +1,18 @@
 const mongoose = require('mongoose')
 
 const companySchema = new mongoose.Schema({
-    taxReferenceNumber : String,
+    taxReference: String,
     name        : String,
     address     : String,
     phone       : String,
     email       : String,
     website     : String,
-    logoUrl     : String,
+    filename     : String,
     description : String,
-    investor    : Boolean,
+    //investor    : Boolean,
     userId      : String,
-    tags        : Array
+    tags        : Array,
+    rating      : Number
 })
 
 module.exports = mongoose.model('Company', companySchema)

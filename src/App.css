@@ -7,3 +7,11 @@
 body {
   background: #f3f3f3;
 }
+
+.error-form {
+  padding: 20px 30px;
+  background: red;
+  border: 1px solid;
+  border-radius: 5px;
+  color: #fff;
+}

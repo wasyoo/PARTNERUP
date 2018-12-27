@@ -1,8 +1,14 @@
 import React from "react";
 
-export default class MovieRating extends React.Component {
+export default class Rating extends React.Component {
+  constructor(props){
+    super(props)
+    this.state={
+      rating : this.props.rating || 3
+    }
+  }
   render() {
-    return Array(Number(this.props.rating))
+    return Array(Number(this.state.rating))
       .fill(<span style={{ color: "#ffd700" }}>★</span>)
       .concat(Array(5).fill(<span style={{ color: "#ababab" }}>☆</span>))
       .slice(0, 5);
