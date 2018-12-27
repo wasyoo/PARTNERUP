@@ -1,0 +1,123 @@
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+.navbar {
+  border: 1px solid lightgray;
+  height: 40px;
+  border-right: 0px;
+  border-left: 0px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.navbar a {
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+}
+.intro {
+  background-image: url("https://i.ibb.co/mTSy7hk/Try-some-text-over-this.png");
+  background-size: cover;
+  height: 500px;
+  background-position: center;
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 26px;
+  text-align: center;
+  font-weight: 100;
+}
+.call-to-action {
+  background-color: transparent;
+  border: 2px solid #ffcd00;
+  padding: 20px;
+  border-radius: 5px;
+  width: 250px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
+}
+.call-to-action:hover {
+  background-color: #ffcd00;
+  cursor: pointer;
+}
+
+.ask-presentation {
+  margin: 120px 50px;
+  display: flex;
+  justify-content: space-around;
+  height: 600px;
+}
+.ask-text {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+.ask-text h2 {
+  color: #212b35;
+}
+.ask-text p {
+  color: #637381;
+}
+
+.ask-presentation button {
+  background-color: transparent;
+  border: 2px solid #ffcd00;
+  padding: 20px;
+  border-radius: 5px;
+  width: 250px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #212b35;
+}
+.ask-presentation button:hover {
+  background-color: #ffcd00;
+  cursor: pointer;
+}
+
+.perks {
+  background-color: #333333;
+  color: white;
+  text-align: center;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.perks-figures {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+  margin: 50px;
+}
+.community {
+  margin: 100px;
+  text-align: center;
+}
+.community h2 {
+  margin: 50px;
+  text-align: center;
+}
+.community span {
+  background-color: #ffcd00;
+}
+.filters li {
+  display: inline-block;
+  margin: 5px;
+  cursor: pointer;
+  color: #fff;
+  padding: 10px;
+  border: solid 2px #333;
+  color: #333;
+  font-size: 14px;
+}
+.filters li:hover {
+  background-color: #333;
+  color: white;
+}

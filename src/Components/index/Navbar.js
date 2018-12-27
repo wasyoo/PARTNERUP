@@ -1,11 +1,11 @@
 import React from 'react'
+
 const NavBar = () => {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
 
             <a className="navbar-brand" href="/">
                 <img src="https://www.clipartmax.com/png/middle/115-1150788_unique-partnership-schemes-business-handshake-logo.png" alt="logo partnerup" />
-                <span>ParterUp</span>
             </a>
 
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,7 +21,7 @@ const NavBar = () => {
                         <a className="nav-link" href="#">A propos</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link disabled" href="/contact">Contact</a>
+                        <a className="nav-link disabled" href="#">Contact</a>
                     </li>
                 </ul>
 
