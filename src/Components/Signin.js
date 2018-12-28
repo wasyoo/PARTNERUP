@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Axios from 'axios'
+import { Redirect } from 'react-router-dom'
 
 export class Signin extends Component {
 
@@ -15,7 +16,7 @@ export class Signin extends Component {
         .then(res =>{
             localStorage.setItem('UserToken', res.data.token);
             localStorage.setItem('myId', res.data.userId);
-            this.props.history.push('/')
+            this.props.history.push('/home')
         })
         .catch(err=>{
             console.log(err)
@@ -24,7 +25,8 @@ export class Signin extends Component {
 
     render() {
         return (
-        <div>
+        <div className="sign-form">
+            <h1>Formulaire de connexion</h1>
             <form action="" onSubmit={this.signin}>
                 <div className="form-group">
                     <label htmlFor="name">Email</label>

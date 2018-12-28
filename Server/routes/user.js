@@ -2,7 +2,7 @@ const router = require('express').Router();
 const bcrypt    = require('bcrypt')
 const jwtUtils = require('../utils/jwt.utils')
 const User = require('../db/models/user')
-
+const Company = require('../db/models/company')
 
 router.post('/new',(req,res)=>{
     const passwordHash = bcrypt.hashSync(req.body.password, 10);
@@ -56,10 +56,16 @@ router.get("/me",(req,res)=>{
         return res.status(400).json({ 'error': 'wrong token' });
 
     User.findOne({_id:userId})
-    .then(user=>{
-        res.send({
-            name:user.name,
-        });
+    .then(user =>{
+        console.log(user)
+        Company.findOne({ userId: user._id })
+        .then(company=>{
+            res.send({
+                user,
+                company
+                });
+        })
+        
     })
     .catch(err=>{
         res.status(500).json({ 'error': 'cannot fetch user' });  

@@ -35,7 +35,7 @@ const Form = () => {
             </div>
           </form>
 
-          <button type="button" className="btn ">
+          <button type="button" className="btn btn-success">
             SUBMIT
           </button>
         </div>

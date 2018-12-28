@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import Profile from './Components/Profile/Profile'
 import Home from './Components/Home/Home'
 import Messaging from './Components/Messaging/Messaging'
-//import NavBar from './Components/NavBar/NavBar'
-// import NavBarConnected from './Components/NavBar/NavBarConnected'
+import NavBar from './Components/NavBar/NavBar'
 import Footer from './Components/Footer/Footer'
 import SignUp from './Components/addUser'
 import SignIn from './Components/Signin'
@@ -17,6 +16,7 @@ import Contact from './Components/ContactUs/Contact'
 import './App.css';
 
 class App extends Component {
+
   render() {
     console.log(localStorage.getItem('UserToken'))
     console.log(localStorage.getItem('myId'))
@@ -24,10 +24,17 @@ class App extends Component {
         <div className="App">
             <Router>   
               <div>
-                {/* <NavBar/> */}
-                {/* <NavBarConnected/> */}
+                {/* { !localStorage.getItem('UserToken') && <Redirect to="/" />} */}
+
+                {/* {
+                  localStorage.getItem('UserToken') && 
+                  <Route path="/signin">
+                    <Redirect to="/home" />
+                  </Route>
+                } */}
+                <NavBar/>
                 <Route exact path="/" component={Index}/>
-                <Route exact path="/home" component={Home}/>
+                <Route path="/home" component={Home}/>
                 <Route path="/profile/:id" component={Profile} />
                 <Route path="/messaging" component={Messaging} />
                 <Route path="/need/:id" component={DetailsNeeds} />

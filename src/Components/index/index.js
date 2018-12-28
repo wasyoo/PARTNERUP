@@ -1,11 +1,8 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import Perks from "./perks";
 import Startups from "./Community";
-import NavBar from "./Navbar";
-import Modal from '../Profile/Modal';
+import {Link} from 'react-router-dom'
 import "./index.css";
-import Log from "./Login";
 
 
 
@@ -13,14 +10,9 @@ const Intro = () => {
   return (
     <div className="intro">
       <div className="intro-text">
-        <h2> Find your perfect partner in two clicks </h2>
-        <p>"Your partner is your key to success "</p>
-        <button data-target="#Login"
-        data-toggle="modal"
-        className="call-to-action">
-          <i class="fas fa-rocket" /> Get Started
-        </button>
-        <Modal title="Login Form" id="Login" content={Log} />
+        <h2> Trouvez votre partenaire idéal en deux clics </h2>
+        <p>"Votre partenaire est la clé de votre succès"</p>
+        <Link className="call-to-action" to="/signin"><i class="fas fa-rocket"/> Commencer</Link>
       </div>
     </div>
   );
@@ -76,7 +68,6 @@ const Search = () => {
 export default function Index() {
   return (
     <div className="App">
-    <NavBar/>
       <Intro />
       <Ask />
       <Search />

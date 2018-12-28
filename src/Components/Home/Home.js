@@ -13,7 +13,8 @@ export default class Home extends Component {
         super()
         this.state={
             needs : [],
-            lastCompanies : []
+            lastCompanies : [],
+            searchNeed : "" 
         }
     }
     componentWillMount(){
@@ -21,16 +22,28 @@ export default class Home extends Component {
         .then(res=>{
             this.setState({
                 needs : res.data.needs,
-                lastCompanies : res.data.company
+                lastCompanies : res.data.company,
             })
         })
         .catch(err=>console.log(err))
     }
+
+    filterNeed = (needs, searchNeed) => {
+        return needs.filter(
+            el => el.title.toUpperCase().indexOf(searchNeed.toUpperCase().trim()) !== -1 
+        );
+    };
+
     render(){
+        console.log(this.filtredNeed)
         return (
             <div>
                 <HomeBanner/>
-                <SearchBox/>
+                <SearchBox getSearch={(searchContent)=>
+                    this.setState({
+                        searchNeed : searchContent
+                    })}/>
+
                 <main className="home-main-container">
                     <div className="row">
                         <section className="col-md-9">
@@ -38,7 +51,7 @@ export default class Home extends Component {
                             {this.state.needs.length <= 0 ? (
                                     <Loading/>
                             ) :(
-                                <HomeNeedsList needs={this.state.needs}/>
+                                <HomeNeedsList needs={this.filterNeed(this.state.needs , this.state.searchNeed)}/>
                             )} 
                             </div>
                         </section>

@@ -25,14 +25,11 @@
     padding: 0;
 }
 
+.dropdown-menu{
+    z-index: 2000;
+}
 .navbar-brand{
-    background: rgba(237, 205, 31, 9);
-    flex :1;
-    padding:10px 0 !important;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 10px 0 10px 10px;
 }
 
 .navbar-brand img{
@@ -111,4 +108,25 @@
 .msg-menu-header{
     display:flex;
     justify-content: space-between;
+}
+
+.add-need-btn{
+    border: 2px solid #fdd300;
+    color : #fdd300 !important;
+    background: transparent;
+}
+
+.add-need-btn :hover{
+    background-color : #fdd300 !important;
+}
+
+.login-buttons{
+    background: none;
+    margin: 10px;
+    color:#ffcd00
+
+}
+.login-buttons:hover{
+    color: black;
+    background-color: #ffcd00;
 }

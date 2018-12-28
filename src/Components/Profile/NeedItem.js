@@ -1,7 +1,8 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 const NeedItem = ({item,company})=>{
-    
+    console.log(item)
     return (
         <div className="need-item">
             <div className="item-img">
@@ -19,7 +20,7 @@ const NeedItem = ({item,company})=>{
                     <div className="item-tags">
                         {item.tags.map((el,i) => <span key={i}>{el}</span>)}
                     </div>
-                    <a href="/#">voir détails ></a>
+                    <Link to={`/need/${item._id}`}> Voir détails ></Link>
                 </div>
             </div>
             

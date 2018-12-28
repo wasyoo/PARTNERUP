@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Dropdown } from 'semantic-ui-react'
 import Axios from 'axios'
 import {getJwt} from '../../helpers'
+import { ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 const options = [
     { key: 'angular', text: 'Angular', value: 'angular' },
@@ -43,39 +44,47 @@ export class addNeeds extends Component {
         Axios.post("http://localhost:4000/company/needs/add",NewNeeds, { headers: { Authorization: getJwt() } })
         .then((res)=>{
             console.log(res.data)
+            this.props.close()
+            // this.props.history.push('/home')
         })
         .catch((err)=>{
             console.log(err)
         })
+        
     }
   render() {
     return (
-        <form onSubmit={this.addNeeds}>
-            <div className="form-group">
-            <label htmlFor="title">Titre</label>
-            <input
-                type="text"
-                className="form-control"
-                id="title"
-                name="title"
-            />
-            </div>
-            <div className="form-group">
-                <label htmlFor="description">Description</label>
-                <textarea 
-                    className="form-control"
-                    id="description"
-                    name="description" 
-                    rows="5">
-                </textarea>
-            </div>
+        <div>
+            <ModalHeader>Ajouter un besoin</ModalHeader>
+                <ModalBody>
+                <form onSubmit={this.addNeeds}>
+                    <div className="form-group">
+                    <label htmlFor="title">Titre</label>
+                    <input
+                        type="text"
+                        className="form-control"
+                        id="title"
+                        name="title"
+                    />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="description">Description</label>
+                        <textarea 
+                            className="form-control"
+                            id="description"
+                            name="description" 
+                            rows="5">
+                        </textarea>
+                    </div>
 
-            <Dropdown name="tags" id="tags" placeholder='Skills' fluid multiple selection options={options} />
+                    <Dropdown name="tags" id="tags" placeholder='Skills' fluid multiple selection options={options} />
 
-            <button type="submit" className="btn btn-primary">
-                Submit
-            </button>
-      </form>
+                    <button type="submit" className="btn btn-primary">
+                        Submit
+                    </button>
+            </form>
+          </ModalBody>
+        </div>
     )
   }
 }

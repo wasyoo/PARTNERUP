@@ -9,7 +9,7 @@ const LastStartup = ({company}) =>{
             {company.map(el=> 
             <div className="statup-item">
                 <img src={`http://localhost:4000/${el.filename}`} alt={el.name}/>
-                <div>
+                <div className="statup-content">
                     <h2>{el.name}</h2>
                     <Rating rating={el.rating || 5}/>
                 </div>

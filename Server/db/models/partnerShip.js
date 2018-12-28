@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const partnerUpSchema = new mongoose.Schema({
     message     : String,
-    state       : Boolean,
+    state       : String,
     seen        : { type : Boolean, default: false }, 
     date        : { type: Date, default: Date.now() },
     sender      : String,

@@ -5,7 +5,7 @@
 }
 
 body {
-  background: #f3f3f3;
+  background: white;
 }
 
 .error-form {
@@ -14,4 +14,20 @@ body {
   border: 1px solid;
   border-radius: 5px;
   color: #fff;
+}
+
+.sign-form{
+  padding: 100px;
+  display : flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center
+}
+
+.sign-form form{
+  width: 30%
+}
+
+.add-company{
+  width: 100%
 }
